@@ -1,0 +1,114 @@
+.card {
+  padding: 10px;
+  height: 250px;
+  width: 50%;
+  margin: 10px;
+  display: flex;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  height: 250px;
+  width: 50%;
+  margin: 10px;
+}
+
+.card img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* for medium screen and larger */
+@media (min-width: 768px) {
+  .card {
+    padding: 10px;
+    height: 250px;
+    width: 80%;
+    margin: 10px;
+  }
+}
+
+/* for large screens and larger */
+@media (min-width: 992px) {
+  .card {
+    padding: 15px;
+    height: 250px;
+    margin-top: 5%;
+  }
+}
+
+/* for extra-large screens and larger */
+@media (min-width: 1200px) {
+  .card {
+    padding: 20px;
+    height: 300px;
+    width: 80%;
+  }
+}
+
+
+
+
+
+
+
+/* for medium screen and larger */
+@media (min-width: 768px) {
+  .card {
+    border: 1px solid blue;
+    padding: 10px;
+    height: 250px;
+    width: 80%;
+    margin: 10px;
+  }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* for large screens and larger */
+@media (min-width: 992px) {
+  .card {
+    border: 1px solid green;
+    padding: 15px;
+    height: 250px;
+    margin-top: 5%;
+  }
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* for extra large screens and larger */
+@media (min-width: 1200px) {
+  .card {
+    border: 1px solid red;
+    padding: 20px;
+    height: 300px;
+    width: 80%;
+  }
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+

@@ -1,7 +1,6 @@
 import './App.css';
-
-import 'bootstrap/dist/css/bootstrap.min.css';
 import {useQuery} from 'react-query';
+import { MovieProvider } from './Components/Context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import {Navbarr} from "./Components/Navbar";
@@ -9,13 +8,14 @@ import { HomeScreen } from './Pages/homeScreen';
 import { DetailsScreen } from './Pages/detailsScreen';
 import { Invoice } from './Pages/invoice';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const apiKey = process.env.REACT_APP_SECRET_KEY;
 
 const getMovies = async () => {
   const res = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=Marvel`);
   return res.json();
 };
-
 
 function App() {
   const {data, error, isLoading} = useQuery('movies', getMovies);
@@ -30,21 +30,19 @@ function App() {
 
   console.log('API Response:', data);
 
-  
   return ( 
     <div className="App">
-<Router>
+    <MovieProvider>
+  <Router>
   <Navbarr />
   <Routes>
     <Route path='/' element={<HomeScreen moviesData={data} />} />
-    <Route path="/detailsScreen/:imdbID" element={<DetailsScreen />} />
-    <Route path="/invoice" element={<Invoice />} />
+    <Route path="/detailsScreen/:imdbID" element={<DetailsScreen moviesData={data} />} />
+    <Route path="/invoice/:imdbID/:selectedMovieName/:totalPrice/:ticketQuantity" element={<Invoice moviesData={data}/>} />
   </Routes>
 </Router>
-
+</MovieProvider>
     </div>
-
   );
 }
-
 export default App;

@@ -70,9 +70,6 @@ export const DetailsScreen = ({ moviesData }) => {
     imdbID: selectedMovie?.imdbID
   });
 
-  
-
-
   return (
     <div className="container mt-2">
       <div className="row">
@@ -127,7 +124,6 @@ export const DetailsScreen = ({ moviesData }) => {
               <Link to={`/invoice/${selectedMovie?.imdbID}/${encodeURIComponent(selectedMovie?.Title)}/${totalPrice}/${ticketQuantity}`} className="btn btn" style={{ background: "#e14658", color: "white" }}>
                   Buy Now
               </Link>
-
 
               {/* <Link
                 to={{

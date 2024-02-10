@@ -13,8 +13,11 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const apiKey = process.env.REACT_APP_SECRET_KEY;
 
+
+
 const getMovies = async () => {
-  const res = await fetch(`http://www.omdbapi.com/?apikey=${apiKey}&s=Marvel`);
+  const res = await fetch(`https://www.omdbapi.com/?apikey=${apiKey}&s=Marvel`);
+
   return res.json();
 };
 

@@ -7,6 +7,7 @@ import {Navbarr} from "./Components/Navbar";
 import { HomeScreen } from './Pages/homeScreen';
 import { DetailsScreen } from './Pages/detailsScreen';
 import { Invoice } from './Pages/invoice';
+import { Receipt } from './Pages/receipt';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -39,6 +40,7 @@ function App() {
     <Route path='/' element={<HomeScreen moviesData={data} />} />
     <Route path="/detailsScreen/:imdbID" element={<DetailsScreen moviesData={data} />} />
     <Route path="/invoice/:imdbID/:selectedMovieName/:totalPrice/:ticketQuantity" element={<Invoice moviesData={data}/>} />
+    <Route path='/receipt' element={<Receipt />} />
   </Routes>
 </Router>
 </MovieProvider>

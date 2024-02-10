@@ -2,6 +2,7 @@ import './App.css';
 import {useQuery} from 'react-query';
 import { MovieProvider } from './Components/Context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 import {Navbarr} from "./Components/Navbar";
 import { HomeScreen } from './Pages/homeScreen';
@@ -39,11 +40,14 @@ function App() {
     <MovieProvider>
   <Router>
   <Navbarr />
+
+  
   <Routes>
     <Route path='/' element={<HomeScreen moviesData={data} />} />
     <Route path="/detailsScreen/:imdbID" element={<DetailsScreen moviesData={data} />} />
     <Route path="/invoice/:imdbID/:selectedMovieName/:totalPrice/:ticketQuantity" element={<Invoice moviesData={data}/>} />
     <Route path='/receipt' element={<Receipt />} />
+    <Route path="*" element={<Navigate to="/" />} />
   </Routes>
 </Router>
 </MovieProvider>

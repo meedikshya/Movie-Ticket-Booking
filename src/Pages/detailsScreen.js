@@ -106,9 +106,15 @@ export const DetailsScreen = ({ moviesData }) => {
           }
 
           /* Responsive adjustments */
-          @media (max-width: 768px) {
-            .card {
-              margin-bottom: 1rem;
+          @media (max-width: 576px) {
+            .col-md-3 {
+              flex: 0 0 100%;
+              max-width: 100%;
+            }
+
+            .col-md-4 {
+              flex: 0 0 100%;
+              max-width: 100%;
             }
           }
         `}

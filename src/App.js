@@ -1,7 +1,7 @@
 import './App.css';
 import {useQuery} from 'react-query';
 import { MovieProvider } from './Components/Context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Navigate } from 'react-router-dom';
 
 import {Navbarr} from "./Components/Navbar";

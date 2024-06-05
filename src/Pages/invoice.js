@@ -81,97 +81,91 @@ export const Invoice = ({ moviesData }) => {
   const discountAmount = ticketSubtotal * discountPercentage;
   const grandAmount = ticketSubtotal + taxAmount - discountAmount;
 
-  const containerStyle = {
-    border: '1px solid #ccc',
-    padding: '20px',
-    marginLeft: '100px',
-    marginRight: 'auto',
-    maxWidth: '30%',
-  };
-
-  const ticketSummaryStyle = {
-    border: '1px solid #ccc',
-    padding: '20px',
-    marginRight:'2rem'
-  };
-
   return (
-    <div className="container-fluid mt-5">
+    <div className="container mt-5">
       <div className="row">
-        <div className="col-md-8 mb-3" style={containerStyle}>
-          <h2>Contact Information</h2>
-          <div className="row">
-            <div className="col-md-12 mb-3">
-              <label htmlFor="fullName" className="form-label">
-                Full Name
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="fullName"
-                name="fullName"
-                value={contactInfo.fullName}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <label htmlFor="email" className="form-label">
-                Email
-              </label>
-              <input
-                type="email"
-                className="form-control"
-                id="email"
-                name="email"
-                value={contactInfo.email}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <label htmlFor="address" className="form-label">
-                Address
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="address"
-                name="address"
-                value={contactInfo.address}
-                onChange={handleInputChange}
-              />
-            </div>
-            <div className="col-md-6 mb-3">
-              <label htmlFor="phone" className="form-label">
-                Phone Number
-              </label>
-              <input
-                type="text"
-                className="form-control"
-                id="phone"
-                name="phoneNumber"
-                value={contactInfo.phoneNumber}
-                onChange={handleInputChange}
-              />
+        <div className="col-lg-8 col-md-12 mb-3">
+          <div className="card">
+            <div className="card-body">
+              <h2>Contact Information</h2>
+              <div className="row">
+                <div className="col-md-12 mb-3">
+                  <label htmlFor="fullName" className="form-label">
+                    Full Name
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="fullName"
+                    name="fullName"
+                    value={contactInfo.fullName}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <label htmlFor="email" className="form-label">
+                    Email
+                  </label>
+                  <input
+                    type="email"
+                    className="form-control"
+                    id="email"
+                    name="email"
+                    value={contactInfo.email}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <label htmlFor="address" className="form-label">
+                    Address
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="address"
+                    name="address"
+                    value={contactInfo.address}
+                    onChange={handleInputChange}
+                  />
+                </div>
+                <div className="col-md-6 mb-3">
+                  <label htmlFor="phone" className="form-label">
+                    Phone Number
+                  </label>
+                  <input
+                    type="text"
+                    className="form-control"
+                    id="phone"
+                    name="phoneNumber"
+                    value={contactInfo.phoneNumber}
+                    onChange={handleInputChange}
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div className="col-md-5" style={ticketSummaryStyle}>
-          <h4>Ticket Summary</h4>
-          <p>Selected Movie: {selectedMovieName}</p>
-          <p>Total: ${totalPrice}</p>
-          <p>Tax (13%): ${taxAmount.toFixed(2)}</p>
-          <p>Discount (15%): ${discountAmount.toFixed(2)}</p>
-          <hr />
-          <p>Grand Total: ${grandAmount.toFixed(2)}</p>
-          <br />
-          <button className="btn btn-primary" onClick={handleConfirmAndPay}>
-            Confirm
-          </button>
-          {confirmed && (
-            <div className="alert alert-success mt-3" role="alert">
-              Thank you for your purchase!
+        <div className="col-lg-4 col-md-12 mb-3">
+          <div className="card">
+            <div className="card-body">
+              <h4>Ticket Summary</h4>
+              <p>Selected Movie: {selectedMovieName}</p>
+              <p>Total: ${totalPrice}</p>
+              <p>Tax (13%): ${taxAmount.toFixed(2)}</p>
+              <p>Discount (15%): ${discountAmount.toFixed(2)}</p>
+              <hr />
+              <p>Grand Total: ${grandAmount.toFixed(2)}</p>
+              <br />
+              <button className="btn btn-primary" onClick={handleConfirmAndPay}>
+                Confirm
+              </button>
+              {confirmed && (
+                <div className="alert alert-success mt-3" role="alert">
+                  Thank you for your purchase!
+                </div>
+              )}
             </div>
-          )}
+          </div>
         </div>
       </div>
       <ToastContainer position="top-right" autoClose={2000} />

@@ -9,6 +9,7 @@ import { HomeScreen } from './Pages/homeScreen';
 import { DetailsScreen } from './Pages/detailsScreen';
 import { Invoice } from './Pages/invoice';
 import { Receipt } from './Pages/receipt';
+import {Footer} from "./Components/Footer";
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -49,6 +50,7 @@ function App() {
     <Route path='/receipt' element={<Receipt />} />
     <Route path="*" element={<Navigate to="/" />} />
   </Routes>
+  <Footer />
 </Router>
 </MovieProvider>
     </div>

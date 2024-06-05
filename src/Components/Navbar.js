@@ -17,10 +17,10 @@ export const Navbarr = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mg-auto">
-            <Nav.Link href="/" className='ms-3 text-light'>Home</Nav.Link>
-            <Nav.Link href="#link" className='ms-3 text-light'>Concerts</Nav.Link>
-            <Nav.Link href="#link" className='ms-3 text-light'>Movies</Nav.Link>
-            <Nav.Link href="#link" className='ms-3 text-light'>Theatre Event</Nav.Link>
+            <Nav.Link href="#" className='ms-3 text-light'>Home</Nav.Link>
+            <Nav.Link href="#" className='ms-3 text-light'>Concerts</Nav.Link>
+            <Nav.Link href="#" className='ms-3 text-light'>Movies</Nav.Link>
+            <Nav.Link href="#" className='ms-3 text-light'>Theatre Event</Nav.Link>
           </Nav>
           <Nav className="ms-auto">
               <Button variant="link" className="me-2 text-light" style={{"textDecoration":"none"}}>Login</Button>

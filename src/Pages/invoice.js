@@ -92,79 +92,77 @@ export const Invoice = ({ moviesData }) => {
   const ticketSummaryStyle = {
     border: '1px solid #ccc',
     padding: '20px',
-    position: 'fixed',
-    top: '15%',
-    right: '10%',
-    width: '30%',
+    marginRight:'2rem'
   };
 
   return (
-    <div className="container-fluid mt-5" style={containerStyle}>
-      <h2>Contact Information</h2>
+    <div className="container-fluid mt-5">
       <div className="row">
-        <div className="col-md-12 mb-3">
-          <label htmlFor="fullName" className="form-label">
-            Full Name
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="fullName"
-            name="fullName"
-            value={contactInfo.fullName}
-            onChange={handleInputChange}
-          />
+        <div className="col-md-8 mb-3" style={containerStyle}>
+          <h2>Contact Information</h2>
+          <div className="row">
+            <div className="col-md-12 mb-3">
+              <label htmlFor="fullName" className="form-label">
+                Full Name
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="fullName"
+                name="fullName"
+                value={contactInfo.fullName}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="email" className="form-label">
+                Email
+              </label>
+              <input
+                type="email"
+                className="form-control"
+                id="email"
+                name="email"
+                value={contactInfo.email}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="address" className="form-label">
+                Address
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="address"
+                name="address"
+                value={contactInfo.address}
+                onChange={handleInputChange}
+              />
+            </div>
+            <div className="col-md-6 mb-3">
+              <label htmlFor="phone" className="form-label">
+                Phone Number
+              </label>
+              <input
+                type="text"
+                className="form-control"
+                id="phone"
+                name="phoneNumber"
+                value={contactInfo.phoneNumber}
+                onChange={handleInputChange}
+              />
+            </div>
+          </div>
         </div>
-        <div className="col-md-6 mb-3">
-          <label htmlFor="email" className="form-label">
-            Email
-          </label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            name="email"
-            value={contactInfo.email}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <label htmlFor="address" className="form-label">
-            Address
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="address"
-            name="address"
-            value={contactInfo.address}
-            onChange={handleInputChange}
-          />
-        </div>
-        <div className="col-md-6 mb-3">
-          <label htmlFor="phone" className="form-label">
-            Phone Number
-          </label>
-          <input
-            type="text"
-            className="form-control"
-            id="phone"
-            name="phoneNumber"
-            value={contactInfo.phoneNumber}
-            onChange={handleInputChange}
-          />
-        </div>
-      </div>
-      <div className="row">
-        <div className="col-md-6"></div>
-        <div className="col-md-6" style={ticketSummaryStyle}>
+        <div className="col-md-5" style={ticketSummaryStyle}>
           <h4>Ticket Summary</h4>
-          <p>Selected Movie: {selectedMovieName} </p>
-          <p>Total: $ {totalPrice} </p>
-          <p>Tax (13%): $ {taxAmount.toFixed(2)} </p>
-          <p>Discount (15%): $ {discountAmount.toFixed(2)} </p>
+          <p>Selected Movie: {selectedMovieName}</p>
+          <p>Total: ${totalPrice}</p>
+          <p>Tax (13%): ${taxAmount.toFixed(2)}</p>
+          <p>Discount (15%): ${discountAmount.toFixed(2)}</p>
           <hr />
-          <p>Grand Total: $ {grandAmount.toFixed(2)} </p>
+          <p>Grand Total: ${grandAmount.toFixed(2)}</p>
           <br />
           <button className="btn btn-primary" onClick={handleConfirmAndPay}>
             Confirm

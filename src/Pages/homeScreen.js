@@ -10,7 +10,7 @@ export const HomeScreen = ({ moviesData }) => {
   }
 
   return (
-    <div className="container mt-4">
+    <div className="container mt-4 d-flex justify-content-center"> {/* Centering the content */}
       <style>
         {`
           /* Card styling */
